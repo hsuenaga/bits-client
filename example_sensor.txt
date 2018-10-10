@@ -1,0 +1,104 @@
+Try Authentication
+Bits Sensors:
+GET URL: https://192.168.0.242/api/sensors/devices
+{'errors': [],
+ 'messages': [],
+ 'result': [{'_id': '5b62aad67e4c1d99e3bced63',
+             'accuracy': 1,
+             'bus': 'usb',
+             'device': 'MHZ16',
+             'devicePath': '/dev/ttyUSB1',
+             'displayName': 'FT9LDLF2',
+             'id': '5b62aad67e4c1d99e3bced63',
+             'lastValue': 1539144220350,
+             'manufacturer': 'Grove',
+             'name': 'CO2 Sensor',
+             'resourceUuid': '5d9fc2a9-6090-47e3-a797-e4dec1685eb0',
+             'serial': 'FT9LDLF2',
+             'setValueObject': {},
+             'status': 1,
+             'subsystem': 'tty',
+             'type': 'Gaseous',
+             'units': 'PPM',
+             'uuid': 'dd5bcd4aef3d5fc4c08ff3650e397b27ef3021e8785d429dc5ae71efe436e2d2',
+             'value': 446},
+            {'_id': '5b62aad67e4c1d99e3bced64',
+             'bus': 'usb',
+             'device': 'MHZ16',
+             'devicePath': '/dev/ttyUSB1',
+             'displayName': 'FT9LDLF2',
+             'id': '5b62aad67e4c1d99e3bced64',
+             'lastValue': 1539144220350,
+             'manufacturer': 'Grove',
+             'name': 'Temperature Sensor',
+             'resourceUuid': '93891c21-71f1-4ee9-a343-dbd007ac1b56',
+             'serial': 'FT9LDLF2',
+             'setValueObject': {},
+             'status': 1,
+             'subsystem': 'tty',
+             'type': 'Temperature',
+             'units': 'Celsius',
+             'uuid': 'ae6521f76186488a0fdc2878531a99e115d8b1a70916c2376e033d2e33698811',
+             'value': 28},
+            {'_id': '5b6a744e41c8fba30d95d361',
+             'bus': 'usb',
+             'device': 'RH-USB',
+             'devicePath': '/dev/ttyUSB0',
+             'displayName': None,
+             'id': '5b6a744e41c8fba30d95d361',
+             'lastValue': 1539144221160,
+             'manufacturer': 'Omega',
+             'name': 'Temperature Sensor',
+             'resourceUuid': '81c8f357-62a9-4d61-aad9-50ea64774b84',
+             'serial': 'N18040201',
+             'setValueObject': {},
+             'status': 1,
+             'subsystem': 'tty',
+             'type': 'Temperature',
+             'units': 'Celsius',
+             'uuid': 'ad4e8b434379d6b2bef0d6a0763090bde88ff39bc705a2a3c084945fd6a2c47b',
+             'value': 25.5},
+            {'_id': '5b6a744e41c8fba30d95d362',
+             'bus': 'usb',
+             'device': 'RH-USB',
+             'devicePath': '/dev/ttyUSB0',
+             'displayName': None,
+             'id': '5b6a744e41c8fba30d95d362',
+             'lastValue': 1539144221160,
+             'manufacturer': 'Omega',
+             'name': 'Humidity Sensor',
+             'resourceUuid': 'dc6b3a75-4a30-4d09-8171-7310ade4b8e2',
+             'serial': 'N18040201',
+             'setValueObject': {},
+             'status': 1,
+             'subsystem': 'tty',
+             'type': 'Humidity',
+             'units': 'Percent',
+             'uuid': 'f2767819c5469eef075303192574b9ea704743fbc6ce6e1182ba7c9ba3451aff',
+             'value': 55.5}],
+ 'success': True}
+Bits Sensors by Id:
+Access Device: 5b62aad67e4c1d99e3bced63
+GET URL: https://192.168.0.242/api/sensors/devices/5b62aad67e4c1d99e3bced63
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: :5b62aad67e4c1d99e3bced63
+GET URL: https://192.168.0.242/api/sensors/devices/:5b62aad67e4c1d99e3bced63
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: 5b62aad67e4c1d99e3bced64
+GET URL: https://192.168.0.242/api/sensors/devices/5b62aad67e4c1d99e3bced64
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: :5b62aad67e4c1d99e3bced64
+GET URL: https://192.168.0.242/api/sensors/devices/:5b62aad67e4c1d99e3bced64
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: 5b6a744e41c8fba30d95d361
+GET URL: https://192.168.0.242/api/sensors/devices/5b6a744e41c8fba30d95d361
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: :5b6a744e41c8fba30d95d361
+GET URL: https://192.168.0.242/api/sensors/devices/:5b6a744e41c8fba30d95d361
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: 5b6a744e41c8fba30d95d362
+GET URL: https://192.168.0.242/api/sensors/devices/5b6a744e41c8fba30d95d362
+{'errors': [], 'messages': [], 'result': None, 'success': False}
+Access Device: :5b6a744e41c8fba30d95d362
+GET URL: https://192.168.0.242/api/sensors/devices/:5b6a744e41c8fba30d95d362
+{'errors': [], 'messages': [], 'result': None, 'success': False}
