@@ -43,33 +43,36 @@ class BitsRestClient:
         authenticated = True
         return recv['token']
 
-    def modules(self):
-        recv = self.req_get(self.api_modules)
+    def modules(self, unit=None):
+        recv = self.req_get(self.api_modules, unit)
         return recv
 
-    def omgs(self):
-        recv = self.req_get(self.api_omgs)
+    def omgs(self, unit=None):
+        recv = self.req_get(self.api_omgs, unit)
         return recv
 
-    def users(self):
-        recv = self.req_get(self.api_users)
+    def users(self, unit=None):
+        recv = self.req_get(self.api_users, unit)
         return recv
 
-    def discovery(self):
-        recv = self.req_get(self.api_discovery)
+    def discovery(self, unit=None):
+        recv = self.req_get(self.api_discovery, unit)
         return recv
 
-    def cameras(self):
-        recv = self.req_get(self.api_camera)
+    def cameras(self, unit=None):
+        recv = self.req_get(self.api_camera, unit)
         return recv
 
-    def sensors(self):
-        recv = self.req_get(self.api_sensors)
+    def sensors(self, unit=None):
+        recv = self.req_get(self.api_sensors, unit)
         return recv
 
     ## private
-    def req_get(self, api):
+    def req_get(self, api, unit):
         url = self.url_base + api
+        if unit is not None:
+            url = url + '/' + unit
+        print("GET URL: " + url)
         req = urllib.request.Request(url, method="GET", headers=self.headers)
         return self.do_req(req)
 
@@ -127,3 +130,11 @@ pprint.pprint(cameras)
 print('Bits Sensors:')
 sensors = bits.sensors()
 pprint.pprint(sensors)
+
+print('Bits Sensors by Id:')
+sensor_list = sensors['result']
+for dev in sensor_list:
+    unit_id = dev['id']
+    print('Access Device: ' + unit_id)
+    unit = bits.sensors(unit_id)
+    pprint.pprint(unit)
