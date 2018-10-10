@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import ssl
 import urllib.request
 import json
@@ -107,34 +108,47 @@ token = bits.auth("bits-user", "bits-passwd")
 if token is None:
     print('Warning: authentication failed.')
 
-print('Available Modules:')
-modules = bits.modules()
-pprint.pprint(modules)
+args = sys.argv
+if len(args) <= 1:
+    args = ['all']
 
-print('Available OMG:')
-omgs = bits.omgs()
-pprint.pprint(omgs)
+for target in args:
+    if target in {'module', 'modules', 'all'}:
+        print('Available Modules:')
+        modules = bits.modules()
+        pprint.pprint(modules)
 
-print('Available Users:')
-users = bits.users()
-pprint.pprint(users)
+    if target in {'omg', 'omgs', 'all'}:
+        print('Available OMG:')
+        omgs = bits.omgs()
+        pprint.pprint(omgs)
 
-print('Bits Nodes:')
-nodes = bits.discovery()
-pprint.pprint(nodes)
+    if target in {'user', 'users', 'all'}:
+        print('Available Users:')
+        users = bits.users()
+        pprint.pprint(users)
 
-print('Bits Cameras:')
-cameras = bits.cameras()
-pprint.pprint(cameras)
+    if target in {'node', 'nodes', 'all'}:
+        print('Bits Nodes:')
+        nodes = bits.discovery()
+        pprint.pprint(nodes)
 
-print('Bits Sensors:')
-sensors = bits.sensors()
-pprint.pprint(sensors)
+    if target in {'camera', 'cameras', 'all'}:
+        print('Bits Cameras:')
+        cameras = bits.cameras()
+        pprint.pprint(cameras)
 
-print('Bits Sensors by Id:')
-sensor_list = sensors['result']
-for dev in sensor_list:
-    unit_id = dev['id']
-    print('Access Device: ' + unit_id)
-    unit = bits.sensors(unit_id)
-    pprint.pprint(unit)
+    if target in {'sensor', 'sensors', 'all'}:
+        print('Bits Sensors:')
+        sensors = bits.sensors()
+        pprint.pprint(sensors)
+        print('Bits Sensors by Id:')
+        sensor_list = sensors['result']
+        for dev in sensor_list:
+            unit_id = dev['id']
+            print('Access Device: ' + unit_id)
+            unit = bits.sensors(unit_id)
+            pprint.pprint(unit)
+            print('Access Device: ' + ':' + unit_id)
+            unit = bits.sensors(':' + unit_id)
+            pprint.pprint(unit)
